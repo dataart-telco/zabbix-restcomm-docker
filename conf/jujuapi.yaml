@@ -1,0 +1,4 @@
+juju-api:
+  endpoint: "wss://juju.com:17070"
+  admin-secret: catenvironment/environment.yaml|greppassword
+

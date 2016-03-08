@@ -1,0 +1,53 @@
+[
+   {
+      "status":"0",
+      "conditions": [
+            {
+                "conditiontype": 24,
+                "operator": 2,
+                "value": "restcomm"
+            }
+      ],
+      "operations":[
+         {
+            "operationtype":"2",
+            "esc_period":"0",
+            "evaltype":"0",
+            "esc_step_to":"1",
+            "esc_step_from":"1"
+         },
+         {
+            "operationtype":"4",
+            "esc_period":"0",
+            "evaltype":"0",
+            "esc_step_to":"1",
+            "esc_step_from":"1",
+            "opgroup":[
+               {
+                  "groupid":"<REPLACE_ME_GROUP_RESTCOMM_CLUSTER>"
+               }
+            ]
+         },
+         {
+            "operationtype":"6",
+            "esc_period":"0",
+            "evaltype":"0",
+            "esc_step_to":"1",
+            "esc_step_from":"1",
+            "optemplate":[
+               {
+                  "templateid":"<REPLACE_ME_TPLS_RESTCOMM_CLUSTER_TEMPLATE>"
+               }
+            ]
+         }
+      ],
+      "def_shortdata":"Auto registration: {HOST.HOST}",
+      "name":"Restcomm Cluster",
+      "esc_period":"0",
+      "def_longdata":"Host name: {HOST.HOST}\r\nHost IP: {HOST.IP}\r\nAgent port: {HOST.PORT}",
+      "eventsource":"2",
+      "r_shortdata":"",
+      "r_longdata":"",
+      "recovery_msg":"0"
+   }
+]
