@@ -1,13 +1,6 @@
-[
+[ 
    {
       "status":"0",
-      "conditions": [
-            {
-                "conditiontype": 24,
-                "operator": 2,
-                "value": "restcomm"
-            }
-      ],
       "operations":[
          {
             "operationtype":"2",
@@ -41,6 +34,19 @@
             ]
          }
       ],
+      "filter":{
+         "formula":"",
+         "evaltype":"0",
+         "conditions":[
+            {
+               "operator":"2",
+               "conditiontype":"24",
+               "formulaid":"A",
+               "value":"restcomm"
+            }
+         ],
+         "eval_formula":"A"
+      },
       "def_shortdata":"Auto registration: {HOST.HOST}",
       "name":"Restcomm Cluster",
       "esc_period":"0",
@@ -48,6 +54,273 @@
       "eventsource":"2",
       "r_shortdata":"",
       "r_longdata":"",
+      "recovery_msg":"0"
+   },
+   {
+      "status":"0",
+      "operations":[
+         {
+            "operationtype":"1",
+            "esc_period":"0",
+            "evaltype":"0",
+            "opcommand_grp":[
+               {
+                  "groupid":"<REPLACE_ME_GROUP_RESTCOMM_CLUSTER>"
+               }
+            ],
+            "esc_step_to":"1",
+            "esc_step_from":"1",
+            "opcommand":{
+               "username":"",
+               "authtype":"0",
+               "privatekey":"",
+               "publickey":"",
+               "scriptid":"0",
+               "command":"{$RESTCOMM_SCALE_UP_SCRIPT}",
+               "execute_on":"1",
+               "password":"",
+               "type":"0",
+               "port":""
+            }
+         }
+      ],
+      "filter":{
+         "formula":"",
+         "evaltype":"0",
+         "conditions":[
+            {
+               "operator":"7",
+               "conditiontype":"16",
+               "formulaid":"A",
+               "value":""
+            },
+            {
+               "operator":"0",
+               "conditiontype":"5",
+               "formulaid":"B",
+               "value":"1"
+            },
+            {
+               "operator":"2",
+               "conditiontype":"3",
+               "formulaid":"C",
+               "value":"LiveCalls max limit"
+            }
+         ],
+         "eval_formula":"A and B and C"
+      },
+      "def_shortdata":"{TRIGGER.STATUS}: {TRIGGER.NAME}",
+      "name":"Scale Up Restcomm",
+      "esc_period":"3600",
+      "def_longdata":"Trigger: {TRIGGER.NAME}\r\nTrigger status: {TRIGGER.STATUS}\r\nTrigger severity: {TRIGGER.SEVERITY}\r\nTrigger URL: {TRIGGER.URL}\r\n\r\nItem values:\r\n\r\n1. {ITEM.NAME1} ({HOST.NAME1}:{ITEM.KEY1}): {ITEM.VALUE1}\r\n2. {ITEM.NAME2} ({HOST.NAME2}:{ITEM.KEY2}): {ITEM.VALUE2}\r\n3. {ITEM.NAME3} ({HOST.NAME3}:{ITEM.KEY3}): {ITEM.VALUE3}\r\n\r\nOriginal event ID: {EVENT.ID}",
+      "eventsource":"0",     
+      "r_shortdata":"{TRIGGER.STATUS}: {TRIGGER.NAME}",
+      "r_longdata":"Trigger: {TRIGGER.NAME}\r\nTrigger status: {TRIGGER.STATUS}\r\nTrigger severity: {TRIGGER.SEVERITY}\r\nTrigger URL: {TRIGGER.URL}\r\n\r\nItem values:\r\n\r\n1. {ITEM.NAME1} ({HOST.NAME1}:{ITEM.KEY1}): {ITEM.VALUE1}\r\n2. {ITEM.NAME2} ({HOST.NAME2}:{ITEM.KEY2}): {ITEM.VALUE2}\r\n3. {ITEM.NAME3} ({HOST.NAME3}:{ITEM.KEY3}): {ITEM.VALUE3}\r\n\r\nOriginal event ID: {EVENT.ID}",
+      "recovery_msg":"0"
+   },
+   {
+      "status":"0",
+      "operations":[
+         {
+            "operationtype":"1",
+            "esc_period":"0",
+            "evaltype":"0",
+            "opcommand_grp":[
+               {
+                  "groupid":"<REPLACE_ME_GROUP_RESTCOMM_CLUSTER>"
+               }
+            ],
+            "opconditions":[
+
+            ],
+            "opcommand_hst":[
+
+            ],
+            "esc_step_to":"1",
+            "esc_step_from":"1",
+            "opcommand":{
+               "username":"",
+               "authtype":"0",
+               "privatekey":"",
+               "publickey":"",
+               "scriptid":"0",
+               "command":"{$RESTCOMM_SCALE_DOWN_SCRIPT}",
+               "execute_on":"1",
+               "password":"",
+               "type":"0",
+               "port":""
+            }
+         }
+      ],
+      "filter":{
+         "formula":"",
+         "evaltype":"0",
+         "conditions":[
+            {
+               "operator":"7",
+               "conditiontype":"16",
+               "formulaid":"A",
+               "value":""
+            },
+            {
+               "operator":"0",
+               "conditiontype":"5",
+               "formulaid":"B",
+               "value":"1"
+            },
+            {
+               "operator":"2",
+               "conditiontype":"3",
+               "formulaid":"C",
+               "value":"LiveCalls min limit"
+            }
+         ],
+         "eval_formula":"A and B and C"
+      },
+      "def_shortdata":"{TRIGGER.STATUS}: {TRIGGER.NAME}",
+      "name":"Scale Down Restcomm",
+      "esc_period":"3600",
+      "def_longdata":"Trigger: {TRIGGER.NAME}\r\nTrigger status: {TRIGGER.STATUS}\r\nTrigger severity: {TRIGGER.SEVERITY}\r\nTrigger URL: {TRIGGER.URL}\r\n\r\nItem values:\r\n\r\n1. {ITEM.NAME1} ({HOST.NAME1}:{ITEM.KEY1}): {ITEM.VALUE1}\r\n2. {ITEM.NAME2} ({HOST.NAME2}:{ITEM.KEY2}): {ITEM.VALUE2}\r\n3. {ITEM.NAME3} ({HOST.NAME3}:{ITEM.KEY3}): {ITEM.VALUE3}\r\n\r\nOriginal event ID: {EVENT.ID}",
+      "eventsource":"0",
+      "r_shortdata":"{TRIGGER.STATUS}: {TRIGGER.NAME}",
+      "r_longdata":"Trigger: {TRIGGER.NAME}\r\nTrigger status: {TRIGGER.STATUS}\r\nTrigger severity: {TRIGGER.SEVERITY}\r\nTrigger URL: {TRIGGER.URL}\r\n\r\nItem values:\r\n\r\n1. {ITEM.NAME1} ({HOST.NAME1}:{ITEM.KEY1}): {ITEM.VALUE1}\r\n2. {ITEM.NAME2} ({HOST.NAME2}:{ITEM.KEY2}): {ITEM.VALUE2}\r\n3. {ITEM.NAME3} ({HOST.NAME3}:{ITEM.KEY3}): {ITEM.VALUE3}\r\n\r\nOriginal event ID: {EVENT.ID}",
+      "recovery_msg":"0"
+   },
+   {
+      "status":"0",
+      "operations":[
+         {
+            "operationtype":"1",
+            "esc_period":"0",
+            "evaltype":"0",
+            "opcommand_grp":[
+               {
+                  "groupid":"<REPLACE_ME_GROUP_RESTCOMM_CLUSTER>"
+               }
+            ],
+            "opconditions":[
+
+            ],
+            "opcommand_hst":[
+
+            ],
+            "esc_step_to":"1",
+            "esc_step_from":"1",
+            "opcommand":{
+               "username":"",
+               "authtype":"0",
+               "privatekey":"",
+               "publickey":"",
+               "scriptid":"0",
+               "command":"{$MESOS_SCALE_UP_SCRIPT}",
+               "execute_on":"1",
+               "password":"",
+               "type":"0",
+               "port":""
+            }
+         }
+      ],
+      "filter":{
+         "formula":"",
+         "evaltype":"0",
+         "conditions":[
+            {
+               "operator":"7",
+               "conditiontype":"16",
+               "formulaid":"A",
+               "value":""
+            },
+            {
+               "operator":"0",
+               "conditiontype":"5",
+               "formulaid":"B",
+               "value":"1"
+            },
+            {
+               "operator":"2",
+               "conditiontype":"3",
+               "formulaid":"C",
+               "value":"Segment cpu resources(max)"
+            }
+         ],
+         "eval_formula":"A and B and C"
+      },
+      "def_shortdata":"{TRIGGER.STATUS}: {TRIGGER.NAME}",
+      "name":"Scale Up Mesos",
+      "esc_period":"3600",
+      "def_longdata":"Trigger: {TRIGGER.NAME}\r\nTrigger status: {TRIGGER.STATUS}\r\nTrigger severity: {TRIGGER.SEVERITY}\r\nTrigger URL: {TRIGGER.URL}\r\n\r\nItem values:\r\n\r\n1. {ITEM.NAME1} ({HOST.NAME1}:{ITEM.KEY1}): {ITEM.VALUE1}\r\n2. {ITEM.NAME2} ({HOST.NAME2}:{ITEM.KEY2}): {ITEM.VALUE2}\r\n3. {ITEM.NAME3} ({HOST.NAME3}:{ITEM.KEY3}): {ITEM.VALUE3}\r\n\r\nOriginal event ID: {EVENT.ID}",
+      "eventsource":"0",
+      "r_shortdata":"{TRIGGER.STATUS}: {TRIGGER.NAME}",
+      "r_longdata":"Trigger: {TRIGGER.NAME}\r\nTrigger status: {TRIGGER.STATUS}\r\nTrigger severity: {TRIGGER.SEVERITY}\r\nTrigger URL: {TRIGGER.URL}\r\n\r\nItem values:\r\n\r\n1. {ITEM.NAME1} ({HOST.NAME1}:{ITEM.KEY1}): {ITEM.VALUE1}\r\n2. {ITEM.NAME2} ({HOST.NAME2}:{ITEM.KEY2}): {ITEM.VALUE2}\r\n3. {ITEM.NAME3} ({HOST.NAME3}:{ITEM.KEY3}): {ITEM.VALUE3}\r\n\r\nOriginal event ID: {EVENT.ID}",
+      "recovery_msg":"0"
+   },
+   {
+      "status":"0",
+      "operations":[
+         {
+            "operationtype":"1",
+            "esc_period":"0",
+            "evaltype":"0",
+            "opcommand_grp":[
+               {
+                  "groupid":"<REPLACE_ME_GROUP_RESTCOMM_CLUSTER>"
+               }
+            ],
+            "opconditions":[
+
+            ],
+            "opcommand_hst":[
+
+            ],
+            "esc_step_to":"1",
+            "esc_step_from":"1",
+            "opcommand":{
+               "username":"",
+               "authtype":"0",
+               "privatekey":"",
+               "publickey":"",
+               "scriptid":"0",
+               "command":"{$MESOS_SCALE_DOWN_SCRIPT}",
+               "execute_on":"1",
+               "password":"",
+               "type":"0",
+               "port":""
+            }
+         }
+      ],
+      "filter":{
+         "formula":"",
+         "evaltype":"0",
+         "conditions":[
+            {
+               "operator":"7",
+               "conditiontype":"16",
+               "formulaid":"A",
+               "value":""
+            },
+            {
+               "operator":"0",
+               "conditiontype":"5",
+               "formulaid":"B",
+               "value":"1"
+            },
+            {
+               "operator":"2",
+               "conditiontype":"3",
+               "formulaid":"C",
+               "value":"Segment cpu resources(min)"
+            }
+         ],
+         "eval_formula":"A and B and C"
+      },
+      "def_shortdata":"{TRIGGER.STATUS}: {TRIGGER.NAME}",
+      "name":"Scale Down Mesos",
+      "esc_period":"3600",
+      "def_longdata":"Trigger: {TRIGGER.NAME}\r\nTrigger status: {TRIGGER.STATUS}\r\nTrigger severity: {TRIGGER.SEVERITY}\r\nTrigger URL: {TRIGGER.URL}\r\n\r\nItem values:\r\n\r\n1. {ITEM.NAME1} ({HOST.NAME1}:{ITEM.KEY1}): {ITEM.VALUE1}\r\n2. {ITEM.NAME2} ({HOST.NAME2}:{ITEM.KEY2}): {ITEM.VALUE2}\r\n3. {ITEM.NAME3} ({HOST.NAME3}:{ITEM.KEY3}): {ITEM.VALUE3}\r\n\r\nOriginal event ID: {EVENT.ID}",
+      "eventsource":"0",
+      "actionid":"11",
+      "r_shortdata":"{TRIGGER.STATUS}: {TRIGGER.NAME}",
+      "r_longdata":"Trigger: {TRIGGER.NAME}\r\nTrigger status: {TRIGGER.STATUS}\r\nTrigger severity: {TRIGGER.SEVERITY}\r\nTrigger URL: {TRIGGER.URL}\r\n\r\nItem values:\r\n\r\n1. {ITEM.NAME1} ({HOST.NAME1}:{ITEM.KEY1}): {ITEM.VALUE1}\r\n2. {ITEM.NAME2} ({HOST.NAME2}:{ITEM.KEY2}): {ITEM.VALUE2}\r\n3. {ITEM.NAME3} ({HOST.NAME3}:{ITEM.KEY3}): {ITEM.VALUE3}\r\n\r\nOriginal event ID: {EVENT.ID}",
       "recovery_msg":"0"
    }
 ]
